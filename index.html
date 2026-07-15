@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="warpper">
+        <h1>Product Manager</h1>
+        <p>JSON + LoacalStorage + JavaScript</p>
+    </header>
+    <aside class="warpper">
+        <div class="add-update-container">
+            <button id="add-form-btn" class="active-button">Add Products</button>
+            <button id="update-form-btn" class="deactive-button">Update Products</button>
+        </div>
+        <form id="add-new-product-form">
+            <p>ADD NEW PRODUCT</p>
+            <label for="title">Title</label>
+            <input type="text" id="title" placeholder="e.g. iPhone 15">
+            <label for="price">Price</label>
+            <input type="number" step="any"  id="price" placeholder="e.g. 99.99">
+            <label for="stock">Stock</label>
+            <input type="number"  id="stock" placeholder="e.g. 10">
+            <label for="sku">SKU</label>
+            <input type="text"  id="sku" placeholder="e.g. APL-001">
+            <button class="active-button" type="submit">Add Product</button>
+        </form>
+        <form id="update-product-form" class="hidden">
+            <p>UPDATE PRODUCT</p>
+            <label for="product-title">Select Product</label>
+            <select  id="product-title">
+                <option value="none">None</option>
+            </select>
+            <label for="update-title">Title</label>
+            <input type="text" id="update-title" placeholder="e.g. iPhone 15">
+            <label for="update-price">Price</label>
+            <input type="number"  id="update-price" step="any" placeholder="e.g. 99.99">
+            <label for="update-stock">Stock</label>
+            <input type="number"  id="update-stock" placeholder="e.g. 10">
+            <label for="update-sku">SKU</label>
+            <input type="text"  id="update-sku" placeholder="e.g. APL-001" disabled>
+            <button class="active-button" type="submit">Update Product</button>
+        </form>
+    </aside>
+    <main class="warpper">
+        <div class="total-product">
+            <div>
+                <h3>Product List</h3>
+                <p>Manage your inventory below</p>
+            </div>
+            <div>
+                <p id="product-count" class="product-count">0 items</p>
+                <button id="clear-cache">Clear cache</button>
+            </div>
+            
+        </div>
+        
+        <section >
+            <table>
+                <thead>
+                    <tr>
+                        <th class="table-cell-5">ID</th>
+                        <th class="title">TITLE</th>
+                        <th class="price">PRICE</th>
+                        <th class="table-cell-15">STOCK</th>
+                        <th class="table-cell-15">SKU</th>
+                        <th class="table-cell-20">ACTION</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    
+                </tbody>    
+            </table>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
