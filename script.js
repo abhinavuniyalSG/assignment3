@@ -45,13 +45,20 @@ const showUpdatedList = ()=>{
         `
         ProductTableBody.appendChild(Row);
     });
-    if(productList !== null ||productList.length === 0 ){}
+    if(productList === null ||productList.length === 0 ){
+        const Row = document.createElement("tr");
+        Row.innerHTML =`<td colspan=6 style="height: 50vh;  text-align: center;"
+                            >No data add product or refresh page to get data 
+                        </td>`
+        console.log("here");
+        ProductTableBody.appendChild(Row);
+    }
     //for displaying total item at main 
     ProductCount.textContent = `${productList === null ?0: productList.length} items` 
 
     // for update form selction 
     ProductTitle.innerHTML = "";
-    const titleList = productList.map((item)=>item.title);
+    const titleList = productList === null ?[]: productList.map((item)=>item.title);
     titleList.unshift("None");
 
     console.log(titleList); 
