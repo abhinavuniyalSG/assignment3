@@ -44,6 +44,20 @@ aside{
     align-items: center;
     margin: 25px;
 }
+
+.aniamtion-class{
+    animation: shake 0.1s 3 ease-in;
+}
+@keyframes shake {
+    25%{
+        transform: translateX(2px);
+    }
+    75%{
+        transform: translateX(-2px);
+    }
+}
+
+
 .add-update-container{
     border: solid 1px #6baad6;
     width: 100%;

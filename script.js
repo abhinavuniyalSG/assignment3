@@ -40,7 +40,7 @@ const showUpdatedList = ()=>{
             <td class="table-cell-15">${item.sku}</td>
             <td class="table-cell-20">
                 <button onClick="deleteFromListHandler(event)" class="delete-btn" value="${item.id}">❌ Delete</button>
-                <button onClick="updateFromListHandler(event)" value="${item.id}">✏️Edit</button>
+                <button onClick="updateFromListHandler(event)" value="${item.id}">✏️ Edit</button>
             </td>
         `
         ProductTableBody.appendChild(Row);
@@ -144,6 +144,8 @@ const updateFromListHandler=(event)=>{
     Price.value = selectedProduct.price;
     Stock.value = selectedProduct.stock;
     Sku.value = selectedProduct.sku;
+    UpdateProductForm.classList.add("aniamtion-class");
+    setTimeout(()=> UpdateProductForm.classList.remove("aniamtion-class"),500);
 }
 
 
