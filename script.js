@@ -18,7 +18,7 @@ const ProductTableBody = document.querySelector("#table-body");
 
 
 
-const titleReg = /^[A-Za-z\d].{0,40}$/;    
+const titleReg = /^[A-Za-z\d].{0,50}$/;    
 const priceReg = /^[\d]+([.][\d]+){0,1}$/;
 const stockReg = /^[\d]+$/;
 const skuReg = /^([A-Z]+[-])+[\d]{3}$/
@@ -45,6 +45,7 @@ const showUpdatedList = ()=>{
         `
         ProductTableBody.appendChild(Row);
     });
+    if(productList !== null ||productList.length === 0 ){}
     //for displaying total item at main 
     ProductCount.textContent = `${productList === null ?0: productList.length} items` 
 
