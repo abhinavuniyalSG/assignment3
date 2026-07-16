@@ -149,7 +149,7 @@ const updateFromListHandler=(event)=>{
 
 const addProductHandler= (e)=>{
     e.preventDefault();
-    const productList = JSON.parse(localStorage.getItem('productList'));
+    const productList = JSON.parse(localStorage.getItem('productList'))??[];
 
     const [Title, Price, Stock, Sku] = Array.from(AddNewProductForm.children).filter(item => item.id === "title"  || item.id ==="price" || item.id  ==="stock" || item.id === "sku");
     console.log(Title.value,Price.value,Sku.value,Stock.value);
@@ -160,7 +160,8 @@ const addProductHandler= (e)=>{
     }else if(productList.find(item=>item.sku === Sku.value)){
         alert("sku can not have same value");
     }else{
-        const newItem = {id:1+productList[productList.length-1].id,title:Title.value,price:Price.value,stock:Stock.value,sku:Sku.value };
+        console.log("value is here",1+(productList[productList.length-1]?.id??0) ,typeof(productList[productList.length-1]?.id??0));
+        const newItem = {id:1+(productList[productList.length-1]?.id??0),title:Title.value,price:Price.value,stock:Stock.value,sku:Sku.value };
         productList.push(newItem);
         localStorage.removeItem('productList');
         localStorage.setItem('productList',JSON.stringify(productList));
