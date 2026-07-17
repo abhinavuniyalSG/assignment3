@@ -20,20 +20,20 @@ body{
 
 header{
     grid-area: header;
-    background-color: #03045e;
+    background-color: #15176E;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-header h1,header p{
+header > h1,header > p{
     color: white;
     margin: 0;
 }
-header p{
+header > p{
     padding-left: 10px;
     padding-right: 10px;
     border-radius:20px ;
-    background-color: #0003f9;
+    /* border: solid 1px; */
 
 }
 
@@ -75,8 +75,11 @@ button{
     border: none;
 }
 .active-button{
-    background-color: #03045e;
+    background-color: #15176E;
     color: white;
+}
+form .active-button:hover{
+    background-color: #0F1258;
 }
 .deactive-button{
     background-color: transparent;
@@ -118,8 +121,8 @@ main{
     overflow: hidden;
     
 }
-main section{
-    height: 80%;
+section{
+    height: 84%;
     overflow: auto;
     border-radius: 8px;
 }
@@ -130,30 +133,32 @@ main section{
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.total-product div h3, .total-product div p{
+.total-product > div > h3, .total-product div p{
     margin: 0px;
-
-
 }
-.total-product div h3{
+.total-product > div > h3{
     color: #03045e;;
 }
-.total-product div p{
-    font-weight: 200;
-    font-size: 12px;
+.total-product > div > p{
     text-align: center;
 }
 .total-product div:nth-of-type(2) {
-    display: flex;
+    display: flex;  
+    justify-content: space-between;
+    width: 200px; 
+}
+.total-product > div >  button{
+   background-color: white;
+   font-size: 15px;
+   font-weight: 900;
     
 }
-.total-product div  button{
-   background-color: white;
-   margin-left: 5px;
-    
+.total-product > div >  button:hover{
+    color: #6baad6;
+    border:solid 1px #6baad6;
 }
 .product-count {
-    background-color: #03045e;
+    background-color: #15176E;
     padding: 8px;
     border-radius: 20px;
     color: white;
@@ -166,29 +171,50 @@ table{
     border-radius: 8px;
     overflow: hidden; 
     background-color: white;
+    height: 100px
 }
 thead{
     color: white;
-    background-color: #03045e;
+    background-color: #15176E;
     text-align:left;
+    font-size: 14px;
+
 }
 tbody{
-    font-size: 13px;
-    font-weight: 200;
+    font-size: 14px;
 }
+
 tbody button{
-    min-width: 0;
-    width: 65px;
-    padding: 4px;
-    
+   min-width: 0;
+   width: 40px;
+   padding: 8px;
+   border-radius: 8px;
 }
+tbody button:hover{
+    animation: hop 0.15s infinite ease-in-out ;
+}
+@keyframes hop {
+    50%{
+        transform: translateY(-2px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
 td, th{
-    padding: 4px;
+    padding: 8px;
+    text-align: center;
+}
+th{
+    font-weight: 600;
+}
+.title{
+    text-align: start;
 }
 
 .table-cell-5{
     width: 5%;
-
 }
 .table-cell-15{
     width: 15%;
@@ -198,4 +224,6 @@ td, th{
     width: 20%;
 
 }
+
+
 
