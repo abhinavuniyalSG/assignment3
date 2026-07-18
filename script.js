@@ -123,7 +123,7 @@ const deleteFromListHandler =(event)=>{
     if(!userConformation){
         return;
     }
-    const id =  Number(event.target.value);
+    const id =  Number(event.target.closest("button").value);
     const productList = JSON.parse(localStorage.getItem('productList'))??[];
     const newProductList = productList.filter((item)=>item.id !== id);
     localStorage.setItem("productList",JSON.stringify(newProductList));
@@ -131,7 +131,7 @@ const deleteFromListHandler =(event)=>{
 }
 const updateFromListHandler=(event)=>{
     updateHandler();
-    const selectedProduct = JSON.parse(localStorage.getItem('productList')).find((item)=>item.id === Number(event.target.value))??false;
+    const selectedProduct = JSON.parse(localStorage.getItem('productList')).find((item)=>item.id === Number(event.target.closest("button").value))??false;
     if(!selectedProduct){
         alert("some internal error ");
         return;
