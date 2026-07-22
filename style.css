@@ -201,7 +201,7 @@ tbody button:hover {
 tr {
   height: 63px;
 }
-.total-product div p {
+.total-product div:nth-of-type(2) p {
   padding-left: 10px;
   padding-right: 10px;
 }
