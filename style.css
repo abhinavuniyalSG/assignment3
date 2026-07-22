@@ -197,6 +197,7 @@ tbody button {
 tbody button:hover {
   border: solid 1px#1683d8;
   cursor: pointer;
+  background-color: white;
 }
 tr {
   height: 63px;
